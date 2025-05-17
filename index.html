@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>みんなのガチャツール - 公式サイト</title>
+    <style>
+        /* 全体のスタイル */
+        :root {
+            --primary-color: #FF6B6B;
+            --secondary-color: #4ECDC4;
+            --accent-color: #FFE66D;
+            --text-color: #333;
+            --light-bg: #f8f8f8;
+            --white: #fff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        /* ヘッダー */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: var(--white);
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+        
+        .app-icon {
+            width: 120px;
+            height: 120px;
+            border-radius: 24px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .app-icon::before {
+            content: "🎲";
+            font-size: 3rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .app-store-badge {
+            margin-top: 2rem;
+            height: 48px;
+        }
+        
+        /* メインコンテンツ */
+        section {
+            padding: 4rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+        
+        .features {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+        
+        .feature {
+            flex: 1 1 300px;
+            max-width: 350px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            background-color: var(--light-bg);
+            padding: 5rem 1rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1.5rem;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
+        }
+        
+        /* フッター */
+        footer {
+            background-color: var(--text-color);
+            color: var(--white);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="app-icon"></div>
+        <h1>みんなのガチャツール</h1>
+        <p class="tagline">自分だけのガチャを作って、シミュレーション！確率設定からガチャ結果まで、すべてを自由に管理できるアプリです。</p>
+    </header>
+    
+    <section>
+        <h2>主な機能</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🎲</div>
+                <h3>複数の確率設定パターン</h3>
+                <p>好きなだけ確率設定パターンを作成・保存できます。様々なガチャを自由に設計して、シミュレーションを楽しみましょう。</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔊</div>
+                <h3>読み上げ機能</h3>
+                <p>ガチャ結果を自動で読み上げ！シンプルモードと詳細モードから選べるので、盛り上がること間違いなし！</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>履歴と統計</h3>
+                <p>ガチャの結果を自動で保存し、いつでも確認できます。設定確率と実際の排出率を比較して分析することも可能です。</p>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <h2>使い方</h2>
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚙️</div>
+                <h3>1. 確率設定を作成</h3>
+                <p>ガチャの内容と確率を自由に設定。複数のパターンを作成して保存できます。確率は自動的に正規化されるので安心です。</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">👆</div>
+                <h3>2. ガチャを実行</h3>
+                <p>回数を指定して一気にガチャを引けます。効果音もON/OFFが可能で、臨場感あふれる演出が楽しめます。</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🗂️</div>
+                <h3>3. 結果を確認・共有</h3>
+                <p>詳細な結果を確認し、読み上げ機能で盛り上がりましょう。履歴機能で過去の結果もいつでも振り返れます。</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 みんなのガチャツール. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://x.com/DiRvy4" target="_blank">お問い合わせ</a>
+        </div>
+    </footer>
+</body>
+</html>
