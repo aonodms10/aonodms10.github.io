@@ -141,6 +141,61 @@
             box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
         }
         
+        /* サポートセクション用スタイル */
+        .support-section {
+            background-color: var(--light-bg);
+            padding: 4rem 1rem;
+        }
+        
+        .support-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .support-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .support-card {
+            flex: 1 1 300px;
+            max-width: 350px;
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        .support-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .support-card ul {
+            list-style-type: none;
+            margin-top: 1rem;
+        }
+        
+        .support-card li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+        
         /* フッター */
         footer {
             background-color: var(--text-color);
@@ -166,6 +221,37 @@
                 flex-direction: column;
                 align-items: center;
             }
+            
+            .support-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        /* お問い合わせフォームのスタイル追加 */
+        .form-success {
+            background-color: #4ECDC4;
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+        
+        .button-secondary {
+            background-color: #999;
+            color: white;
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: bold;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -218,11 +304,120 @@
         </div>
     </section>
     
+    <!-- サポートセクション（新規追加） -->
+    <section id="support" class="support-section">
+        <div class="support-container">
+            <h2>サポート情報</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">「みんなのガチャツール」について、ご質問やお困りのことがありましたら、以下のサポート情報をご確認ください。</p>
+            
+            <div class="support-cards">
+                <div class="support-card">
+                    <h3>📧 お問い合わせ方法</h3>
+                    <p>以下のいずれかの方法でお問い合わせください：</p>
+                    <ul>
+                        <li>メール：<a href="mailto:tyamukou@icloud.com">tyamukou@icloud.com</a></li>
+                        <li>X (Twitter)：<a href="https://x.com/DiRvy4" target="_blank">@DiRvy4</a></li>
+                        <li>お問い合わせフォーム：<a href="#contact-form">こちら</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">よくある質問（FAQ）</h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q：読み上げ機能が動作しません。</div>
+                    <div class="faq-answer">A：お使いのデバイスの設定で「サウンド」がミュートになっていないか確認してください。また、アプリ内の設定メニューで「読み上げ」がオンになっているか確認してください。</div>
+                </div>
+            </div>
+            
+            <!-- 問い合わせフォーム（修正版） -->
+            <div id="contact-form" style="margin-top: 3rem; background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">お問い合わせフォーム</h3>
+                
+                <div id="form-success-message" class="form-success">
+                    お問い合わせを送信しました。ありがとうございます。
+                </div>
+                
+                <form id="contactForm">
+                    <div style="margin-bottom: 1rem;">
+                        <label for="name" style="display: block; margin-bottom: 0.5rem;">氏名：</label>
+                        <input type="text" id="name" name="name" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" required>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="email" style="display: block; margin-bottom: 0.5rem;">メールアドレス：</label>
+                        <input type="email" id="email" name="email" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" required>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <label for="subject" style="display: block; margin-bottom: 0.5rem;">件名：</label>
+                        <input type="text" id="subject" name="subject" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" required>
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label for="message" style="display: block; margin-bottom: 0.5rem;">お問い合わせ内容：</label>
+                        <textarea id="message" name="message" rows="5" style="width: 100%; padding: 0.5rem; border: 1px solid #ddd; border-radius: 4px;" required></textarea>
+                    </div>
+                    
+                    <div class="button-container">
+                        <button type="button" id="sendByEmailClient" style="background-color: var(--primary-color); color: var(--white); padding: 0.8rem 2rem; border: none; border-radius: 50px; font-weight: bold; cursor: pointer;">メーラーで送信</button>
+                        <button type="button" id="copyToClipboard" class="button-secondary">内容をコピー</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    
     <footer>
         <p>&copy; 2025 みんなのガチャツール. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="https://x.com/DiRvy4" target="_blank">お問い合わせ</a>
-        </div>
     </footer>
+    
+    <script>
+        // メーラーで送信ボタンのクリックイベント
+        document.getElementById('sendByEmailClient').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('すべての項目を入力してください。');
+                return;
+            }
+            
+            // メール本文を整形
+            const body = `お名前: ${name}%0D%0A%0D%0Aメールアドレス: ${email}%0D%0A%0D%0A内容:%0D%0A${message}`;
+            
+            // メールリンクを生成して開く
+            window.location.href = `mailto:tyamukou@icloud.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+        });
+        
+        // コピーボタンのクリックイベント
+        document.getElementById('copyToClipboard').addEventListener('click', function() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (!name || !email || !subject || !message) {
+                alert('すべての項目を入力してください。');
+                return;
+            }
+            
+            // クリップボードにコピーする内容
+            const copyText = `件名: ${subject}\n\nお名前: ${name}\nメールアドレス: ${email}\n\n内容:\n${message}`;
+            
+            // クリップボードにコピー
+            navigator.clipboard.writeText(copyText)
+                .then(() => {
+                    alert('お問い合わせ内容をクリップボードにコピーしました。メールやSNSに貼り付けてお送りください。');
+                })
+                .catch(err => {
+                    console.error('クリップボードへのコピーに失敗しました', err);
+                    alert('コピーに失敗しました。手動でコピーしてください。');
+                });
+        });
+    </script>
 </body>
 </html>
