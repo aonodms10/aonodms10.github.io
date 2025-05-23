@@ -1,0 +1,387 @@
+/* 全体のスタイル */
+:root {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #FFE66D;
+    --text-color: #333;
+    --light-bg: #f8f8f8;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* ヘッダー */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+.app-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    margin: 0 auto 1rem;
+    background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.app-icon::before {
+    content: "🎲";
+    font-size: 3rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+}
+
+.app-store-badge {
+    margin-top: 2rem;
+    height: 48px;
+}
+
+/* ナビゲーションメニュー */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #f8f8f8;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    margin: 0 1rem;
+    display: inline-block;
+}
+
+nav a:hover {
+    color: var(--primary-color);
+}
+
+/* メインコンテンツ */
+section {
+    padding: 4rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.feature {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* 詳しい使い方セクション */
+#detailed-usage {
+    background-color: #fff;
+    padding: 4rem 1rem;
+}
+
+.usage-category {
+    margin-bottom: 3rem;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.usage-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.usage-card {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.usage-card h4 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.usage-card ul,
+.usage-card ol {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.usage-card li {
+    margin-bottom: 0.5rem;
+}
+
+.usage-card p {
+    margin-bottom: 0.5rem;
+}
+
+.usage-card .example {
+    font-size: 0.9rem;
+    color: #666;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border-left: 3px solid var(--accent-color);
+    margin-top: 0.5rem;
+}
+
+.usage-card .tip {
+    font-size: 0.9rem;
+    color: #666;
+    background-color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin-top: 1rem;
+}
+
+.usage-card dl {
+    margin: 1rem 0;
+}
+
+.usage-card dt {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    color: var(--text-color);
+}
+
+.usage-card dd {
+    margin-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: #666;
+}
+
+.rarity-example {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    border-radius: 6px;
+}
+
+.rarity-example li {
+    display: inline-block;
+    margin-right: 1rem;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--accent-color);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* サポートセクション用スタイル */
+.support-section {
+    background-color: var(--light-bg);
+    padding: 4rem 1rem;
+}
+
+.support-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.support-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.support-card {
+    flex: 1 1 300px;
+    max-width: 350px;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.support-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.support-card h4 {
+    color: var(--secondary-color);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.support-card ul {
+    list-style-type: none;
+    margin-top: 1rem;
+}
+
+.support-card li {
+    margin-bottom: 0.5rem;
+}
+
+.faq-item {
+    margin-bottom: 1.5rem;
+}
+
+.faq-question {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+/* フッター */
+footer {
+    background-color: var(--text-color);
+    color: var(--white);
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+/* お問い合わせフォーム */
+.form-success {
+    background-color: #4ECDC4;
+    color: white;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    display: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.button-secondary {
+    background-color: #999;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-secondary:hover {
+    background-color: #777;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .features {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .usage-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .support-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        margin: 0 0.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .rarity-example li {
+        display: block;
+        margin-bottom: 0.5rem;
+        margin-right: 0;
+    }
+}
+
+/* ボタンホバー効果 */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}

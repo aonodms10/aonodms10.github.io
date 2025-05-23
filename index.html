@@ -4,256 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>みんなのガチャツール - 公式サイト</title>
-    <style>
-        /* 全体のスタイル */
-        :root {
-            --primary-color: #FF6B6B;
-            --secondary-color: #4ECDC4;
-            --accent-color: #FFE66D;
-            --text-color: #333;
-            --light-bg: #f8f8f8;
-            --white: #fff;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-        }
-        
-        body {
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        
-        a {
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-        
-        /* ヘッダー */
-        header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: var(--white);
-            padding: 3rem 1rem;
-            text-align: center;
-        }
-        
-        .app-icon {
-            width: 120px;
-            height: 120px;
-            border-radius: 24px;
-            margin: 0 auto 1rem;
-            background: linear-gradient(45deg, var(--accent-color), var(--secondary-color));
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .app-icon::before {
-            content: "🎲";
-            font-size: 3rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto 1.5rem;
-        }
-        
-        .app-store-badge {
-            margin-top: 2rem;
-            height: 48px;
-        }
-        
-        /* メインコンテンツ */
-        section {
-            padding: 4rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        h2 {
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-        
-        .features {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-        }
-        
-        .feature {
-            flex: 1 1 300px;
-            max-width: 350px;
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-        
-        .cta-section {
-            text-align: center;
-            background-color: var(--light-bg);
-            padding: 5rem 1rem;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--primary-color);
-            color: var(--white);
-            padding: 1rem 2rem;
-            border-radius: 50px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 1.5rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
-        }
-        
-        /* サポートセクション用スタイル */
-        .support-section {
-            background-color: var(--light-bg);
-            padding: 4rem 1rem;
-        }
-        
-        .support-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .support-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .support-card {
-            flex: 1 1 300px;
-            max-width: 350px;
-            background: var(--white);
-            padding: 2rem;
-            border-radius: 16px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-        }
-        
-        .support-card h3 {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .support-card ul {
-            list-style-type: none;
-            margin-top: 1rem;
-        }
-        
-        .support-card li {
-            margin-bottom: 0.5rem;
-        }
-        
-        .faq-item {
-            margin-bottom: 1.5rem;
-        }
-        
-        .faq-question {
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-            color: var(--primary-color);
-        }
-        
-        /* フッター */
-        footer {
-            background-color: var(--text-color);
-            color: var(--white);
-            padding: 2rem 1rem;
-            text-align: center;
-        }
-        
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .features {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .support-cards {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-        
-        /* お問い合わせフォームのスタイル追加 */
-        .form-success {
-            background-color: #4ECDC4;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            display: none;
-        }
-        
-        .button-container {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-        }
-        
-        .button-secondary {
-            background-color: #999;
-            color: white;
-            padding: 0.8rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <header>
@@ -262,7 +13,16 @@
         <p class="tagline">自分だけのガチャを作って、シミュレーション！確率設定からガチャ結果まで、すべてを自由に管理できるアプリです。</p>
     </header>
     
-    <section>
+    <!-- ナビゲーションメニュー -->
+    <nav>
+        <a href="#features">主な機能</a>
+        <a href="#usage">基本的な使い方</a>
+        <a href="#detailed-usage">詳しい使い方</a>
+        <a href="#support">サポート</a>
+    </nav>
+    
+    <!-- 主な機能 -->
+    <section id="features">
         <h2>主な機能</h2>
         <div class="features">
             <div class="feature">
@@ -283,8 +43,9 @@
         </div>
     </section>
     
-    <section>
-        <h2>使い方</h2>
+    <!-- 基本的な使い方 -->
+    <section id="usage">
+        <h2>基本的な使い方</h2>
         <div class="features">
             <div class="feature">
                 <div class="feature-icon">⚙️</div>
@@ -304,7 +65,141 @@
         </div>
     </section>
     
-    <!-- サポートセクション（新規追加） -->
+    <!-- 詳しい使い方 -->
+    <section id="detailed-usage">
+        <h2>詳しい使い方</h2>
+        
+        <!-- 初期設定 -->
+        <div class="usage-category">
+            <h3 class="category-title">🚀 初期設定</h3>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h4>アプリの初回起動</h4>
+                    <ol>
+                        <li>アプリを初めて起動すると、確率設定が未作成の状態です</li>
+                        <li>「確率設定」タブを開いて、新しい確率設定を作成します</li>
+                        <li>わかりやすい名前を付けて保存します</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 確率設定 -->
+        <div class="usage-category">
+            <h3 class="category-title">⚙️ 確率設定の管理</h3>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h4>複数の確率設定パターン</h4>
+                    <ul>
+                        <li>異なるガチャタイプ用に複数の設定を作成可能</li>
+                        <li>設定名の変更：長押しメニューまたは編集モードで変更</li>
+                        <li>設定の削除：スワイプまたは長押しメニューから削除</li>
+                        <li>選択中の設定には青いチェックマークが表示されます</li>
+                    </ul>
+                </div>
+                <div class="usage-card">
+                    <h4>内容と確率の設定</h4>
+                    <ul>
+                        <li>内容名：ガチャで出るアイテムの名前（例：アイコンリング、ヘッダー、アクキー など）</li>
+                        <li>確率：各アイテムの出現確率（％）</li>
+                        <li>小数点以下9桁まで設定可能（例：0.000000001%）</li>
+                        <li>合計が100%でなくても自動的に正規化されます</li>
+                    </ul>
+                </div>
+                <div class="usage-card">
+                    <h4>正規化について</h4>
+                    <p>入力した確率の合計が100%にならない場合、自動的に比率を保ったまま100%に調整されます。</p>
+                    <p class="example">例：10%、20%、30%と入力（合計60%）→ 16.67%、33.33%、50%に自動調整</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ガチャ実行 -->
+        <div class="usage-category">
+            <h3 class="category-title">🎲 ガチャ実行</h3>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h4>基本操作</h4>
+                    <ol>
+                        <li>「ガチャ実行」タブを開く</li>
+                        <li>プレイヤー名（例えばリスナー名）を入力（省略可能）</li>
+                        <li>使用する確率設定を選択</li>
+                        <li>引く回数を入力</li>
+                        <li>「ガチャを引く！」ボタンをタップ</li>
+                    </ol>
+                </div>
+                <div class="usage-card">
+                    <h4>演出と効果音</h4>
+                    <ul>
+                        <li><strong>演出音声</strong>：ガチャ実行前の効果音</li>
+                        <li><strong>結果効果音</strong>：結果表示時の効果音</li>
+                        <li>両方とも確率設定画面でON/OFF切り替え可能</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 結果表示 -->
+        <div class="usage-category">
+            <h3 class="category-title">📊 結果の確認</h3>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h4>表示される情報</h4>
+                    <ul>
+                        <li><strong>設定確率</strong>：各アイテムの設定された確率</li>
+                        <li><strong>結果の概要</strong>：実際に出たアイテムの個数と排出率</li>
+                        <li><strong>排出率</strong>：実際の結果から計算された確率</li>
+                        <li><strong>詳細な排出結果</strong>：最大100件まで個別の結果を表示</li>
+                    </ul>
+                </div>
+                <div class="usage-card">
+                    <h4>読み上げ機能</h4>
+                    <dl>
+                        <dt>🔊 シンプル読み上げ</dt>
+                        <dd>名前とガチャ結果のみを読み上げます</dd>
+                        <dt>📢 詳細読み上げ</dt>
+                        <dd>日付、確率設定名も含めて読み上げます</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 履歴機能 -->
+        <div class="usage-category">
+            <h3 class="category-title">📝 履歴管理</h3>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h4>履歴の表示</h4>
+                    <ul>
+                        <li>確率設定ごとにフォルダ分けして表示</li>
+                        <li>最新の履歴がある順にフォルダが並びます</li>
+                        <li>各履歴には実行日時、プレイヤー名、総回数が表示</li>
+                    </ul>
+                </div>
+                <div class="usage-card">
+                    <h4>履歴の削除</h4>
+                    <ul>
+                        <li><strong>個別の履歴</strong>：スワイプまたは編集モードで削除</li>
+                        <li><strong>フォルダごと</strong>：長押しメニューまたはスワイプで削除</li>
+                        <li><strong>全履歴</strong>：ゴミ箱アイコンから一括削除</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 便利な使い方 -->
+        <div class="usage-category">
+            <h3 class="category-title">💡 活用のヒント</h3>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h4>複数人でのガチャ大会</h4>
+                    <p>プレイヤー名を入力して順番にガチャを実行し、結果を読み上げて盛り上がりましょう。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- サポートセクション -->
     <section id="support" class="support-section">
         <div class="support-container">
             <h2>サポート情報</h2>
@@ -329,9 +224,14 @@
                     <div class="faq-question">Q：読み上げ機能が動作しません。</div>
                     <div class="faq-answer">A：お使いのデバイスの設定で「サウンド」がミュートになっていないか確認してください。また、アプリ内の設定メニューで「読み上げ」がオンになっているか確認してください。</div>
                 </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">Q：アプリが重い場合はどうすればいいですか？</div>
+                    <div class="faq-answer">A：古い履歴を削除して容量を確保して下さい。また、一度に引く回数を減らすことをお勧めします（1万回以下推奨）。</div>
+                </div>
             </div>
             
-            <!-- 問い合わせフォーム（修正版） -->
+            <!-- 問い合わせフォーム -->
             <div id="contact-form" style="margin-top: 3rem; background: var(--white); padding: 2rem; border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);">
                 <h3 style="text-align: center; margin-bottom: 1.5rem;">お問い合わせフォーム</h3>
                 
@@ -371,9 +271,25 @@
     
     <footer>
         <p>&copy; 2025 みんなのガチャツール. All rights reserved.</p>
+        <div class="footer-links">
+        </div>
     </footer>
     
     <script>
+        // スムーズスクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
         // メーラーで送信ボタンのクリックイベント
         document.getElementById('sendByEmailClient').addEventListener('click', function() {
             const name = document.getElementById('name').value;
